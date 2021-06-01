@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/index.css">
+    <title>Hey What`s Up</title>
+  </head>
+  <body>
+    <div class='box'>
+      <h1>ToDo List</h1>
+      <h3>
+        <%= grettings %>
+      </h3>
+      <ul>
+        <% items.forEach((data, i) => { %>
+          <li>
+              <form class="form"  action="/" method="post">
+              <input type="textarea" readonly name="item" value= <%= data %>  >
+              <button class="button btn-success" type="submit" name="button" value='done'>Done</button>
+              </form>
+           </li>
+        <%  }); %>
+      </ul>
+      <form  action="/" method="post">
+        <input class="input" type="text" name="item" >
+        <button class="button" type="submit" name="button">Add</button>
+      </form>
+    </div>
+  </body>
+</html>
